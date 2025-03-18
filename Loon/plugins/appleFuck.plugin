@@ -1,0 +1,34 @@
+#!name=Anti Revoke
+#!desc=block revoke ios
+#!homepage=
+#!author=
+#!icon=https://raw.githubusercontent.com/acamboy/Scripts/main/icon/apple.png
+
+
+[Rule]
+DOMAIN,ocsp.apple.com,REJECT
+DOMAIN,ocsp2.apple.com,REJECT
+DOMAIN,valid.apple.com,REJECT
+DOMAIN,crl.apple.com,REJECT
+DOMAIN,crl.entrust.net,REJECT
+DOMAIN,certs.apple.com,REJECT
+DOMAIN,appattest.apple.com,REJECT
+DOMAIN,vpp.itunes.apple.com,REJECT
+DOMAIN,humb.apple.com ,REJECT
+DOMAIN,metrics.apple.com ,REJECT
+DOMAIN,pass.nekoo.apple ,REJECT
+DOMAIN,swscan.apple.com ,REJECT
+DOMAIN,appldnld.apple.com ,REJECT
+DOMAIN,xp.apple.com ,REJECT
+DOMAIN,world-gen.g.aaplimg.com ,REJECT
+DOMAIN,mesu.apple.com ,REJECT
+DOMAIN,ffapple.com ,REJECT
+DOMAIN,ocsp.usertrust.com ,REJECT
+DOMAIN,ocsp.entrust.net ,REJECT
+DOMAIN,ocsp.digicert.com ,REJECT
+DOMAIN,ocsp.digicert.cn ,REJECT
+DOMAIN,oscp.appe.com ,REJECT
+DOMAIN,crl4.digicert.com ,REJECT
+DOMAIN,crl3.digicert.com ,REJECT
+DOMAIN,ocsp.int-x3.letsencrypt.org ,REJECT
+
