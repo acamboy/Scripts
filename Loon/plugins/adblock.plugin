@@ -1,0 +1,8 @@
+﻿#!name=Adblock
+#!desc=Addblock pro
+#!homepage=
+#!author=
+#!icon=https://raw.githubusercontent.com/acamboy/Scripts/main/icon/adblock.png
+[Script]
+http-response api.adblockpro.app/verify requires-body=1,script-path=https://raw.githubusercontent.com/acamboy/Scripts/main/js-backup/AdblockPro.js
+[MITM] hostname = api.adblockpro.app
