@@ -1,0 +1,38 @@
+#!name=YouTube Remove advertising (support multiple subtitles)
+#!desc=Remove advertisements in YouTube videos, waterfall streams, search and Shorts, remove the upload button at the bottom, and add picture-in-picture and subtitle translation functions. Remove the upload, segment selection and upgrade buttons at the bottom of YouTube Music, add lyrics translation, and support the background playback of both. This plug-in needs to enable MitM over HTTP/2 and QUIC backback protection. It supports Premium subscribers and does not support tvOS devices.
+#!openUrl=https://apps.apple.com/app/id544007664
+#!author=Maasea[https://github.com/Maasea],VirgilClyne[https://github.com/VirgilClyne],Choler[https://github.com/Choler],DivineEngine[https://github.com/DivineEngine],app2smile[https://github.com/app2smile]
+#!tag=Go to advertising
+#!system=iOS,iPadOS,macOS
+#!system_version=15
+#!loon_version=3.2.4(787)
+#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/YouTube.png
+#!date=2024-11-28 02:07:31
+
+
+[Argument]
+blockUpload=switch,false,true,tag=Hide the upload button,desc=The upload button used to hide the bottom bar of YouTube
+blockImmersive=switch,false,true,tag=Hide the selection button,desc=The selection button used to hide the bottom bar of YouTube Music
+captionLang=select,"id","zh-Hant+en","zh-Hans","zh-Hant","ja","ko","en","off",tag=Subtitle translation language,desc=What languages do you need to translate YouTube subtitles?
+lyricLang=select,"id","zh-Hans","zh-Hant","ja","ko","en","off",tag=Lyrics translation language,desc=What language do you need to translate YouTube Music subtitles?
+debug=switch,false,true,tag=Debugging mode,desc=The debugging mode of this plug-in
+
+
+[Rule]
+AND,((DOMAIN-SUFFIX,googlevideo.com),(PROTOCOL,QUIC)),REJECT
+AND,((DOMAIN-SUFFIX,youtubei.googleapis.com),(PROTOCOL,QUIC)),REJECT
+
+
+[Rewrite]
+^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad mock-response-body data-type=text status-code=502
+
+
+[Script]
+#http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) script-path=https://kelee.one/Resource/Script/YouTube/YouTube_remove_ads/YouTube_remove_ads_response.js,requires-body=true,binary-body-mode=true,argument=[{blockUpload},{blockImmersive},{captionLang},{lyricLang},{debug}],tag=YouTube去广告(kelee脚本)
+#http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.response.preview.js,requires-body=true,binary-body-mode=true,argument=[{blockUpload},{blockImmersive},{captionLang},{lyricLang},{debug}],tag=YouTube去广告(Maasea脚本)
+http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) script-path=https://raw.githubusercontent.com/acamboy/Scripts/main/js-backup/youtube.response.preview.js,requires-body=true,binary-body-mode=true,argument=[{blockUpload},{blockImmersive},{captionLang},{lyricLang},{debug}],tag=YouTube Remove ads + multi sub
+
+
+[MitM]
+hostname=*.googlevideo.com,youtubei.googleapis.com
