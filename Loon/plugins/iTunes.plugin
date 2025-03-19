@@ -1,0 +1,8 @@
+#!name=iTunes
+#!desc=Integrate in-app purchases
+#!homepage=
+#!author=
+#!icon=https://raw.githubusercontent.com/acamboy/Scripts/main/icon/iTunes.png
+[Script]
+http-response ^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt script-path=https://raw.githubusercontent.com/acamboy/Scripts/main/js-backup/iTunes.js, requires-body=true, timeout=60, tag=iTunes
+[MITM] hostname = buy.itunes.apple.com

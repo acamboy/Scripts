@@ -1,0 +1,8 @@
+#!name=Adapty
+#!desc=Integrate in-app purchases
+#!homepage=
+#!author=
+#!icon=https://raw.githubusercontent.com/acamboy/Scripts/main/icon/adapty.svg
+[Script]
+http-response https://api.adapty.io/api/v1/sdk/analytics/profiles requires-body=1,script-path=https://raw.githubusercontent.com/acamboy/Scripts/main/js-backup/Adapty.js
+[MITM] hostname = api.adapty.io
