@@ -1,0 +1,29 @@
+# NAME: apple revoke
+# AUTHOR: acamboy
+
+DOMAIN,ocsp.apple.com
+DOMAIN,ocsp2.apple.com
+DOMAIN,valid.apple.com
+DOMAIN,crl.apple.com
+DOMAIN,crl.entrust.net
+DOMAIN,certs.apple.com
+DOMAIN,appattest.apple.com
+DOMAIN,vpp.itunes.apple.com
+DOMAIN,humb.apple.com 
+DOMAIN,metrics.apple.com 
+DOMAIN,pass.nekoo.apple 
+DOMAIN,swscan.apple.com 
+DOMAIN,appldnld.apple.com 
+DOMAIN,xp.apple.com 
+DOMAIN,world-gen.g.aaplimg.com 
+DOMAIN,mesu.apple.com 
+DOMAIN,ffapple.com 
+DOMAIN,ocsp.usertrust.com 
+DOMAIN,ocsp.entrust.net 
+DOMAIN,ocsp.digicert.com 
+DOMAIN,ocsp.digicert.cn
+DOMAIN,oscp.appe.com 
+DOMAIN,crl4.digicert.com 
+DOMAIN,crl3.digicert.com 
+DOMAIN,ocsp.int-x3.letsencrypt.org 
+
