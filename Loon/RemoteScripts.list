@@ -19,5 +19,5 @@ http-response us-central1-muslim-pro-app.cloudfunctions.net/GetUserPremiumInfo s
 http-response ^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt script-path=https://apptesters.org/wp-content/uploads/iTunes.js, requires-body=true, timeout=60, enabled=true, tag=AppitTesters
 http-response https:\/\/license\.pdfexpert\.com\/api\/2\.0\/(calendarslite|pdfexpert6|documents)\/subscription\/(refresh|check) script-path=https://apptesters.org/wp-content/uploads/readdle.js, requires-body=true, timeout=60, enabled=true, tag=Readdle
 http-response https://order.creativeappnow.com/iap/receipt script-path=https://apptesters.org/wp-content/uploads/Facemoji.js, requires-body=true, timeout=60, enabled=true, tag=facemoji
-http-response ^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$) yscript-path=https://apptesters.org/wp-content/uploads/AutoRC.js, requires-body=true, timeout=60, enabled=true, tag=AppRCTesters
+http-response ^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$) script-path=https://apptesters.org/wp-content/uploads/AutoRC.js, requires-body=true, timeout=60, enabled=true, tag=AppRCTesters
 http-response https://api.adapty.io/api/v1/sdk/analytics/profiles script-path=https://apptesters.org/wp-content/uploads/Adapty.js, requires-body=true, timeout=60, enabled=true, tag=Adapty
